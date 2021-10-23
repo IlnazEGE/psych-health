@@ -57,6 +57,12 @@ openFixedMenu.addEventListener("click", function () {
 closeMenu.addEventListener("click", function () {
 	menuBody.classList.remove("active");
 });
+
+// document.addEventListener('click', e => {
+// 	if (e.target !== openMenu && e.target !== openFixedMenu && menuBody.classList.contains("active") && !e.target.closest('.header-left')) {
+// 		menuBody.classList.remove("active");
+// 	}
+// })
 // ========Menu=========
 
 // ======Tabs==========
@@ -188,7 +194,9 @@ closeMenu.addEventListener("click", function () {
 //======fixed шапки==========
 const headerFixed = document.querySelector('.header-fixed');
 
-window.addEventListener('scroll', () => {
+window.addEventListener('scroll', scrollHeader);
+
+function scrollHeader() {
 	let scrollDistance = window.scrollY;
 
 
@@ -199,7 +207,8 @@ window.addEventListener('scroll', () => {
 		headerFixed.classList.remove('active');
 	}
 	// 	//======fixed после первой секции===========
-});
+}
+scrollHeader();
 // 	//======fixed при скролле вверх===========
 // 	// if (scrollDistance > lastScrollTop) {
 // 	// 	header.classList.remove('header_fixed');
@@ -536,10 +545,10 @@ document.addEventListener('keydown', function (e) {
 // ===========кастомный селект============
 
 // ===========маска============
-// var elementMask = document.querySelector("mask");
+var elementMask = document.querySelector(".mask");
 
-// var im = new Inputmask("+7 (999) 999-9999");
-// im.mask(elementMask);
+var im = new Inputmask("+7 (999) 999-9999");
+im.mask(elementMask);
 // ===========маска============
 
 // ========Мы используем куки========
@@ -589,69 +598,68 @@ document.addEventListener('keydown', function (e) {
 // ===========Toggle Theme===============
 
 // =============RATING===================
-// const ratings = document.querySelectorAll('.rating');
-// if (ratings.length > 0) {
-// 	initRatings();
-// }
+const ratings = document.querySelectorAll('.rating');
+if (ratings.length > 0) {
+	initRatings();
+}
 
-// Основная функция
-// function initRatings() {
-// 	let ratingActive, ratingValue;
-// 	// "Бегаем" по всем рейтингам на странице
-// 	for (let index = 0; index < ratings.length; index++) {
-// 		const rating = ratings[index];
-// 		initRating(rating);
-// 	}
+function initRatings() {
+	let ratingActive, ratingValue;
+	// "Бегаем" по всем рейтингам на странице
+	for (let index = 0; index < ratings.length; index++) {
+		const rating = ratings[index];
+		initRating(rating);
+	}
 
-// 	// Инициализируем конкретный рейтинг
-// 	function initRating(rating) {
-// 		initRatingVars(rating);
+	// Инициализируем конкретный рейтинг
+	function initRating(rating) {
+		initRatingVars(rating);
 
-// 		setRatingActiveWidth();
+		setRatingActiveWidth();
 
-// 		// Возможность указать оценку 
-// 		if (rating.classList.contains('rating_set')) {
-// 			setRating(rating);
-// 		}
-// 	}
+		// Возможность указать оценку 
+		if (rating.classList.contains('rating_set')) {
+			setRating(rating);
+		}
+	}
 
-// 	// Инициализация переменных
-// 	function initRatingVars(rating) {
-// 		ratingActive = rating.querySelector('.rating__active');
-// 		ratingValue = rating.querySelector('.rating__value');
-// 	}
-// 	// Изменяем ширину активных звезд
-// 	function setRatingActiveWidth(index = ratingValue.innerHTML) {
-// 		const ratingActiveWidth = index / 0.05;
-// 		ratingActive.style.width = `${ratingActiveWidth}%`;
-// 	}
+	// Инициализация переменных
+	function initRatingVars(rating) {
+		ratingActive = rating.querySelector('.rating__active');
+		ratingValue = rating.querySelector('.rating__value');
+	}
+	// Изменяем ширину активных звезд
+	function setRatingActiveWidth(index = ratingValue.innerHTML) {
+		const ratingActiveWidth = index / 0.05;
+		ratingActive.style.width = `${ratingActiveWidth}%`;
+	}
 
-// 	// Возможность указать оценку 
-// 	function setRating(rating) {
-// 		const ratingItems = rating.querySelectorAll('.rating__item');
-// 		for (let index = 0; index < ratingItems.length; index++) {
-// 			const ratingItem = ratingItems[index];
-// 			ratingItem.addEventListener("mouseenter", function (e) {
-// 				// Обновление переменных
-// 				initRatingVars(rating);
-// 				// Обновление активных звезд
-// 				setRatingActiveWidth(ratingItem.value);
-// 			});
-// 			ratingItem.addEventListener("mouseleave", function (e) {
-// 				// Обновление активных звезд
-// 				setRatingActiveWidth();
-// 			});
-// 			ratingItem.addEventListener("click", function (e) {
-// 				// Обновление переменных
-// 				initRatingVars(rating);
+	// Возможность указать оценку 
+	function setRating(rating) {
+		const ratingItems = rating.querySelectorAll('.rating__item');
+		for (let index = 0; index < ratingItems.length; index++) {
+			const ratingItem = ratingItems[index];
+			ratingItem.addEventListener("mouseenter", function (e) {
+				// Обновление переменных
+				initRatingVars(rating);
+				// Обновление активных звезд
+				setRatingActiveWidth(ratingItem.value);
+			});
+			ratingItem.addEventListener("mouseleave", function (e) {
+				// Обновление активных звезд
+				setRatingActiveWidth();
+			});
+			ratingItem.addEventListener("click", function (e) {
+				// Обновление переменных
+				initRatingVars(rating);
 
-// 				// Отобразить указанную оцнку
-// 				ratingValue.innerHTML = index + 1;
-// 				setRatingActiveWidth();
-// 			});
-// 		}
-// 	}
-// }
+				// Отобразить указанную оцнку
+				ratingValue.innerHTML = index + 1;
+				setRatingActiveWidth();
+			});
+		}
+	}
+}
 // =============RATING===================
 
 // ==============QUIZ==============
