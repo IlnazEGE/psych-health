@@ -351,6 +351,9 @@ body.lock {
   display: inline-block;
   line-height: 21px;
   color: #ffffff;
+  -webkit-transition: background 0.5s;
+  -o-transition: background 0.5s;
+  transition: background 0.5s;
 }
 
 .btn_green {
@@ -468,6 +471,7 @@ body.lock {
 
 .breadcrumbs {
   background: #f8f8f8;
+  overflow-x: auto;
   border-radius: 4px;
   padding: 17px 23px;
 }
@@ -506,11 +510,13 @@ body.lock {
 .breadcrumbs__link {
   font-size: 16px;
   color: #0a889b;
+  white-space: no-wrap;
 }
 
 .breadcrumbs__item {
   font-size: 16px;
   color: #a4a4a4;
+  white-space: no-wrap;
 }
 
 .pagging {
@@ -538,6 +544,66 @@ body.lock {
 
 .pagging__list li {
   margin: 0 20px;
+}
+
+.rating {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.rating__body {
+  position: relative;
+}
+
+.rating__body::before {
+  content: url(./img/star.svg) url(./img/star.svg) url(./img/star.svg) url(./img/star.svg) url(./img/star.svg);
+  display: block;
+}
+
+.rating__active {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.rating__active::before {
+  content: url(./img/star-active.svg) url(./img/star-active.svg) url(./img/star-active.svg) url(./img/star-active.svg) url(./img/star-active.svg);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.rating__items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.rating__item {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 20%;
+          flex: 0 0 20%;
+  height: 100%;
+  opacity: 0;
+}
+
+.rating__value {
+  line-height: 1;
+  padding: 0px 0px 0px 10px;
+  font-size: 0;
 }
 
 .footer {
@@ -1467,14 +1533,24 @@ body.lock {
   font-weight: 500;
   font-size: 15px;
   line-height: 173.3333333333%;
-  margin: 25px 0px 0px 0px;
+  margin: 25px 0px 10px 0px;
   color: #383838;
+}
+
+.rating-doctors__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .rating-doctors__count {
   font-size: 14px;
   line-height: 26px;
   color: #a99e9e;
+  margin: 0px 0px 0px 15px;
 }
 
 .right-doctors {
@@ -1722,13 +1798,24 @@ body.lock {
 }
 
 .application__form * {
-  margin: 0px 0px 35px 0px;
+  margin: 0px 0px 15px 0px;
 }
 
 .application__form textarea {
   resize: none;
   padding-top: 8px;
   height: 70px;
+}
+
+.application__label {
+  position: relative;
+}
+
+.application__label span {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #0a889b;
 }
 
 .application__input {
@@ -1739,18 +1826,9 @@ body.lock {
   font-size: 14px;
   color: #5b5b5b;
   background: transparent;
-  padding: 0 5px;
+  padding: 0 22px 0 5px;
   position: relative;
   display: block;
-}
-
-.application__input_req::after {
-  content: "123";
-  background: url(../img/info.svg) 0 0 no-repeat;
-  width: 10px;
-  height: 10px;
-  right: 0;
-  top: 0;
 }
 
 .application__input::-webkit-input-placeholder {
@@ -1786,6 +1864,7 @@ body.lock {
 .application__btn {
   padding-top: 13px;
   padding-bottom: 13px;
+  margin: 20px 0px 0px 0px;
 }
 
 .application__text {
@@ -5479,11 +5558,15 @@ body.lock {
   }
 
   .application__form * {
-    margin: 0px 0px 20px 0px;
+    margin: 0px 0px 5px 0px;
   }
 
   .application__form {
     padding: 0 15px;
+  }
+
+  .application__btn {
+    margin: 15px 0px 0px 0px;
   }
 
   .application__text {
@@ -6804,6 +6887,14 @@ body.lock {
 }
 
 @media (any-hover: hover) {
+  .btn_green:hover {
+    background: #0b6a79;
+  }
+
+  .btn_gray:hover {
+    background: #263956;
+  }
+
   .footer__list svg:hover path {
     fill: #fff;
   }
