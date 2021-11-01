@@ -51,9 +51,9 @@ let menuBody = document.querySelector(".header-left");
 openMenu.addEventListener("click", function () {
 	menuBody.classList.add("active");
 });
-openFixedMenu.addEventListener("click", function () {
-	menuBody.classList.add("active");
-});
+// openFixedMenu.addEventListener("click", function () {
+// 	menuBody.classList.add("active");
+// });
 closeMenu.addEventListener("click", function () {
 	menuBody.classList.remove("active");
 });
@@ -62,7 +62,7 @@ closeMenu.addEventListener("click", function () {
 // 	if (e.target !== openMenu && e.target !== openFixedMenu && menuBody.classList.contains("active") && !e.target.closest('.header-left')) {
 // 		menuBody.classList.remove("active");
 // 	}
-// })
+// }) 
 // ========Menu=========
 
 // ======Tabs==========
@@ -192,23 +192,23 @@ closeMenu.addEventListener("click", function () {
 // ======Spollers===========
 
 //======fixed шапки==========
-const headerFixed = document.querySelector('.header-fixed');
+// const headerFixed = document.querySelector('header');
 
-window.addEventListener('scroll', scrollHeader);
+// window.addEventListener('scroll', scrollHeader);
 
-function scrollHeader() {
-	let scrollDistance = window.scrollY;
+// function scrollHeader() {
+// 	let scrollDistance = window.scrollY;
 
 
-	// 	//======fixed после первой секции===========
-	if (scrollDistance >= 1000) {
-		headerFixed.classList.add('active');
-	} else {
-		headerFixed.classList.remove('active');
-	}
-	// 	//======fixed после первой секции===========
-}
-scrollHeader();
+// 	// 	//======fixed после первой секции===========
+// 	if (scrollDistance >= 1000) {
+// 		headerFixed.classList.add('active');
+// 	} else {
+// 		headerFixed.classList.remove('active');
+// 	}
+// 	// 	//======fixed после первой секции===========
+// }
+// scrollHeader();
 // 	//======fixed при скролле вверх===========
 // 	// if (scrollDistance > lastScrollTop) {
 // 	// 	header.classList.remove('header_fixed');
