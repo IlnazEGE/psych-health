@@ -441,7 +441,7 @@ body.lock {
   font-weight: 300;
   font-size: 45px;
   color: #354d6f;
-  margin: 0px 0px 90px 0px;
+  margin: 0px 0px 90px 0px !important;
 }
 
 .swiper-button-next,
@@ -562,7 +562,7 @@ body.lock {
 }
 
 .rating__body::before {
-  content: url(./img/star.svg) url(./img/star.svg) url(./img/star.svg) url(./img/star.svg) url(./img/star.svg);
+  content: url(../img/star.svg) url(../img/star.svg) url(../img/star.svg) url(../img/star.svg) url(../img/star.svg);
   display: block;
 }
 
@@ -575,7 +575,7 @@ body.lock {
 }
 
 .rating__active::before {
-  content: url(./img/star-active.svg) url(./img/star-active.svg) url(./img/star-active.svg) url(./img/star-active.svg) url(./img/star-active.svg);
+  content: url(../img/star-active.svg) url(../img/star-active.svg) url(../img/star-active.svg) url(../img/star-active.svg) url(../img/star-active.svg);
   position: absolute;
   width: 100%;
   height: 100%;
@@ -1134,7 +1134,7 @@ body.lock {
 
 .hero__slide {
   background: 70% 50%/cover no-repeat;
-  min-height: 678px;
+  min-height: 600px;
   border-radius: 3px;
 }
 
@@ -1263,7 +1263,7 @@ body.lock {
 }
 
 .about__text p:not(:last-child) {
-  margin: 0px 0px 30px 0px;
+  margin: 0px 0px 20px 0px;
 }
 
 .about__btn {
@@ -1416,8 +1416,8 @@ body.lock {
 }
 
 .rating-doctors__label {
-  font-weight: 500;
-  font-size: 15px;
+  font-weight: 400;
+  font-size: 16px;
   line-height: 173.3333333333%;
   margin: 25px 0px 10px 0px;
   color: #383838;
@@ -1591,7 +1591,7 @@ body.lock {
 
 .bottom-right-doctors__text {
   max-width: 480px;
-  font-weight: 700;
+  font-weight: 400;
   font-size: 16px;
   line-height: 162.5%;
   color: #525252;
@@ -2408,7 +2408,7 @@ body.lock {
 .videos__title {
   font-family: Oswald;
   font-weight: 300;
-  font-size: 55px;
+  font-size: 47px;
   color: #354d6f;
   margin: 0px 0px 30px 0px;
 }
@@ -2420,6 +2420,10 @@ body.lock {
   margin: 0 -17px;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+}
+
+.videos__descr {
+  margin: 10px 0px 0px 0px;
 }
 
 .videos__body {
@@ -2450,9 +2454,14 @@ body.lock {
 .video__title {
   font-family: Oswald;
   font-weight: 300;
-  font-size: 55px;
+  font-size: 47px;
   color: #354d6f;
-  margin: 20px 0px 30px 0px;
+  margin: 0px 0px 30px 0px;
+}
+
+.video__descr {
+  margin: 20px 0px 0px 0px;
+  font-size: 21px;
 }
 
 .video__item {
@@ -3233,6 +3242,12 @@ body.lock {
   margin: 0px 0px 60px 0px;
 }
 
+.support-blog {
+  padding: 0 0 20px 0;
+  width: 100%;
+  margin: 0 !important;
+}
+
 .blog-item-top {
   margin: 40px 0px 20px 0px;
 }
@@ -3599,6 +3614,17 @@ body.lock {
 @media (max-width: 1510px) {
   .page-blog .container-fluid {
     width: 100%;
+  }
+
+  .support-blog .support__list {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+
+  .support-blog .support__item {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 100%;
+            flex: 0 1 100%;
   }
 }
 
@@ -4097,7 +4123,7 @@ body.lock {
   }
 
   .hero__slide {
-    min-height: 500px;
+    min-height: 400px;
   }
 
   .hero__title {
@@ -4155,7 +4181,7 @@ body.lock {
   }
 
   .about__text p:not(:last-child) {
-    margin: 0px 0px 15px 0px;
+    margin: 0px 0px 12px 0px;
   }
 
   .advantage {
@@ -4584,7 +4610,7 @@ body.lock {
   }
 
   .videos__title {
-    font-size: 50px;
+    font-size: 44px;
   }
 
   .videos__row {
@@ -4601,7 +4627,7 @@ body.lock {
   }
 
   .video__title {
-    font-size: 50px;
+    font-size: 44px;
   }
 
   .reviews-page {
@@ -5113,7 +5139,7 @@ body.lock {
 
   .title {
     font-size: 30px;
-    margin: 0px 0px 50px 0px;
+    margin: 0px 0px 50px 0px !important;
   }
 
   .breadcrumbs {
@@ -5180,12 +5206,12 @@ body.lock {
   }
 
   .hero__slide {
-    min-height: 420px;
+    min-height: 350px;
   }
 
   .hero__title {
     font-size: 42px;
-    padding: 55px 0px 0px 0px;
+    padding: 70px 0px 0px 0px;
     margin: 0px 20px 0px 70px;
   }
 
@@ -5503,7 +5529,7 @@ body.lock {
   }
 
   .videos__title {
-    font-size: 45px;
+    font-size: 41px;
   }
 
   .videos__item {
@@ -5517,7 +5543,7 @@ body.lock {
   }
 
   .video__title {
-    font-size: 45px;
+    font-size: 41px;
   }
 
   .page-price__title {
@@ -5756,7 +5782,7 @@ body.lock {
 
   .title {
     font-size: 27px;
-    margin: 0px 0px 35px 0px;
+    margin: 0px 0px 35px 0px !important;
   }
 
   .breadcrumbs {
@@ -6259,7 +6285,7 @@ body.lock {
   }
 
   .videos__title {
-    font-size: 40px;
+    font-size: 37px;
   }
 
   .video {
@@ -6267,7 +6293,7 @@ body.lock {
   }
 
   .video__title {
-    font-size: 40px;
+    font-size: 37px;
   }
 
   .page-price__title {
