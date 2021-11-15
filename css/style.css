@@ -439,7 +439,7 @@ body.lock {
 .title {
   font-family: Oswald;
   font-weight: 300;
-  font-size: 45px;
+  font-size: 45px !important;
   color: #354d6f;
   margin: 0px 0px 90px 0px !important;
 }
@@ -910,6 +910,34 @@ body.lock {
           align-items: center;
 }
 
+.header__logo {
+  color: #354d6f;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.header__logo img {
+  width: 110px;
+}
+
+.header__logo-text {
+  font-family: Oswald;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: 0.12em;
+  white-space: nowrap;
+  margin: 0px 0px 0px 10px;
+}
+
+.header__logo-text span {
+  display: block;
+  font-size: 25px;
+  line-height: 35px;
+  text-transform: uppercase;
+}
+
 .header__btn {
   padding: 20px 35px;
 }
@@ -1086,6 +1114,12 @@ body.lock {
   left: 0;
   width: 100%;
   min-height: 142px;
+}
+
+.header-fixed .header__logo {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .header-fixed__row {
@@ -2989,71 +3023,7 @@ body.lock {
 }
 
 .choose {
-  margin: 50px 0px 0px 0px;
-}
-
-.choose_white {
-  margin: 0px 0px 110px 0px;
-}
-
-.choose_white .choose__title {
-  color: #354d6f;
-}
-
-.choose_white .choose__body {
-  background: #f8f8f8;
-}
-
-.choose_white .choose__subtitle {
-  color: #354d6f;
-}
-
-.choose_white .form-choose__input {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 30%;
-          flex: 0 0 30%;
-  height: 35px;
-  border-bottom: 0.7px solid #5b5b5b;
-  font-weight: 300;
-  font-size: 14px;
-  color: #fff;
-  background: transparent;
-  padding: 0 5px;
-  display: block;
-}
-
-.choose_white .form-choose__input::-webkit-input-placeholder {
-  font-weight: 300;
-  font-size: 14px;
-  color: #5b5b5b;
-}
-
-.choose_white .form-choose__input::-moz-placeholder {
-  font-weight: 300;
-  font-size: 14px;
-  color: #5b5b5b;
-}
-
-.choose_white .form-choose__input:-ms-input-placeholder {
-  font-weight: 300;
-  font-size: 14px;
-  color: #5b5b5b;
-}
-
-.choose_white .form-choose__input::-ms-input-placeholder {
-  font-weight: 300;
-  font-size: 14px;
-  color: #5b5b5b;
-}
-
-.choose_white .form-choose__input::placeholder {
-  font-weight: 300;
-  font-size: 14px;
-  color: #5b5b5b;
-}
-
-.choose_white .form-choose__text {
-  color: #9e9e9e;
+  margin: 50px 0px 110px 0px;
 }
 
 .choose__body {
@@ -3246,6 +3216,19 @@ body.lock {
   padding: 0 0 20px 0;
   width: 100%;
   margin: 0 !important;
+}
+
+.hero-blog {
+  margin: 0px 0px 50px 0px;
+  max-width: 100%;
+}
+
+.hero-blog .hero__title {
+  font-size: 35px;
+}
+
+.hero-blog .hero__slide {
+  min-height: 450px;
 }
 
 .blog-item-top {
@@ -3608,6 +3591,14 @@ body.lock {
 @media (min-width: 992px) {
   .breadcrumbs__link:hover {
     text-decoration: underline;
+  }
+
+  .about__text {
+    text-align: justify;
+  }
+
+  .text-block__right {
+    text-align: justify;
   }
 }
 
@@ -4782,8 +4773,8 @@ body.lock {
             flex: 0 0 50%;
   }
 
-  .choose_white {
-    margin: 0px 0px 60px 0px;
+  .choose {
+    margin: 40px 0px 60px 0px;
   }
 
   .choose__body {
@@ -5138,7 +5129,7 @@ body.lock {
   }
 
   .title {
-    font-size: 30px;
+    font-size: 30px !important;
     margin: 0px 0px 50px 0px !important;
   }
 
@@ -5712,6 +5703,19 @@ body.lock {
     margin: 0px 0px 0px auto;
   }
 
+  .header__logo img {
+    height: 70px;
+    width: 100%;
+  }
+
+  .header__logo-text {
+    font-size: 18px;
+  }
+
+  .header__logo-text span {
+    font-size: 22px;
+  }
+
   .header__btn_phone {
     display: none;
   }
@@ -5834,6 +5838,26 @@ body.lock {
   .header {
     min-height: 68px;
     padding: 6px 0;
+  }
+
+  .header__logo {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  .header__logo img {
+    height: 50px;
+  }
+
+  .header__logo-text {
+    font-size: 14px;
+    line-height: 1;
+    margin: 0;
+  }
+
+  .header__logo-text span {
+    font-size: 17px;
   }
 
   .header-left {
@@ -6618,6 +6642,18 @@ body.lock {
 }
 
 @media (max-width: 380px) {
+  .header__logo img {
+    height: 40px;
+  }
+
+  .header__logo-text {
+    font-size: 12px;
+  }
+
+  .header__logo-text span {
+    font-size: 16px;
+  }
+
   .blog-item-author__body {
     padding: 10px 8px;
   }
