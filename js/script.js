@@ -1110,10 +1110,10 @@ const heroSwiper = new Swiper('.hero__slider', {
 });
 const blogHeroSlider = new Swiper('.hero-blog__slider', {
 	slidesPerView: 1,
-	navigation: {
-		nextEl: '.swiper-button-next',
-		prevEl: '.swiper-button-prev'
-	},
+	// navigation: {
+	// 	nextEl: '.swiper-button-next',
+	// 	prevEl: '.swiper-button-prev'
+	// },
 });
 const reviewBlogSlider = new Swiper('.review-blog__slider', {
 	slidesPerView: 1,
